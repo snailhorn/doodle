@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>doodle</title>
+    <style>
+        body {
+            margin: 0;
+        }
+
+        #bg {
+            width: 100vw;
+            height: 100vh;
+            overflow: hidden;
+            position: fixed;
+            z-index: -1;
+            top: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/css-doodle/0.7.1/css-doodle.min.js"></script>
+    <div id="bg">
+        <css-doodle>
+            :doodle{
+            @grid:10/ 100vmax;
+            background:black;
+            }
+            @shape:bud, 5;
+            background:rgb(@rand(0,255),@rand(0,255),@rand(0,255));
+            @size: @rand(5,100)px;
+            transform:rotate(@rand(0,360)deg);
+            animation-name:trytry;
+            animation-duration:@rand(3,10)s;
+            animation-iteration-count:infinite;
+            animation-delay:@rand(0,10)s;
+            animation-timing-function:linear;
+            position:absolute;
+            
+            @place-cell:@rand(0,100)vw -100px;
+
+                @keyframes trytry {
+                    0%{
+                        top:0px;
+                        opacity:1.0;
+                    }
+                    50%{
+                        opacity:0.5;
+                        background:rgb(@rand(0,255),@rand(0,255),@rand(0,255));
+                    }
+                    99.99999%{
+                        top:110vh;
+                        }
+                    100%{
+                        top:0px;
+                        opacity:1.0;
+                    }
+                }
+
+        </css-doodle>
+    </div>
+    <div>
+            <p style="color:white; text-align:center;font-size:50px;">HELLO WORLD!</p>
+        </div>
+
+</body>
+
+</html>
